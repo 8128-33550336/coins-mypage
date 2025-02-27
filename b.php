@@ -1,2 +1,2 @@
 <?php
-echo "hello, coi";
+echo "hello, coin";
