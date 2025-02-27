@@ -1,3 +1,3 @@
 <?php
-echo "hello, coins"
+echo "hello, coins, tsukuba"
 ?>
