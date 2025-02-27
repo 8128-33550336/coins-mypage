@@ -1,5 +1,7 @@
 <?php
 
+file_put_contents('~/logs/deploy3.log', '>>><<<', FILE_APPEND | LOCK_EX);
+
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     http_response_code(405);
     return;
