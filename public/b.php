@@ -1,2 +1,2 @@
 <?php
-echo "hello, coi.ns";
+echo "hello, coi.ns.";
