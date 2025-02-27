@@ -16,4 +16,21 @@ if ($_SERVER['HTTP_X-HUB-SIGNATURE-256'] != $signature) {
 }
 
 $dec_body = json_decode($body, true);
+file_put_contents('~/deploy.log', $body, FILE_APPEND | LOCK_EX);
 
+if ($dec_body['action'] != 'push') {
+    http_response_code(204);
+    return;
+}
+
+if ($dec_body['action'] != 'push') {
+    http_response_code(204);
+    return;
+}
+
+if ($dec_body['ref'] != 'refs/heads/main') {
+    http_response_code(204);
+    return;
+}
+
+exec('~/pull_web.sh');
