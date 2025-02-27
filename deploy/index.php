@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     return;
 }
 
-$secret = file_get_contents('../.envs/gh_secret');
+$secret = file_get_contents('~/.envs/gh_secret');
 $body = file_get_contents('php://input');
 
 $signature = 'sha256=' . hash_hmac('sha256', $body, $secret);
