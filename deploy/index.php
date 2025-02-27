@@ -28,6 +28,6 @@ if ($dec_body['ref'] != 'refs/heads/main') {
     return;
 }
 
-print(exec('/home/ugrad/24/s2410303/pull_web.sh'));
+print(`/home/ugrad/24/s2410303/pull_web.sh`);
 
 http_response_code(201);
