@@ -1,2 +1,2 @@
 <?php
-print(`whoami`);
+print(exec('whoami'));
