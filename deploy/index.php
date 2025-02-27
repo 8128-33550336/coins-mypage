@@ -12,7 +12,7 @@ $body = file_get_contents('php://input');
 
 $signature = 'sha256=' . hash_hmac('sha256', $body, $secret);
 
-file_put_contents('/home/ugrad/24/s2410303/logs/deploy2.log', '>>>' . $body . '<<<' . $signature . '>>>' . $_SERVER['HTTP_X-HUB-SIGNATURE-256'] . '<<<' . $_SERVER['HTTP_X-Hub-Signature-256'] . '>>>', FILE_APPEND | LOCK_EX);
+file_put_contents('/home/ugrad/24/s2410303/logs/deploy2.log', '>>>' . $body . '<<<' . $signature . '>>>' . $_SERVER['HTTP_X_HUB_SIGNATURE_256'] . '<<<' . $_SERVER['HTTP_X_Hub_Signature_256'] . '>>>', FILE_APPEND | LOCK_EX);
 
 if ($_SERVER['HTTP_X-HUB-SIGNATURE-256'] != $signature) {
     http_response_code(403);
