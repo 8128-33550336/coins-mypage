@@ -1,2 +1,2 @@
 RewriteEngine on
-RewriteRule ^(?!(static|deploy)).*$ / [L]
+RewriteRule ^(?!(static|deploy)).*$ index.html [L]
