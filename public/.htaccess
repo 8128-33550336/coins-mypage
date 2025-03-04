@@ -1,2 +1,0 @@
-ErrorDocument 403 "a"
-ErrorDocument 404 "b"
