@@ -1,2 +1,2 @@
 RewriteEngine on
-RewriteRule . /~s2410303/index.html [L]
+RewriteRule . index.html [L]
