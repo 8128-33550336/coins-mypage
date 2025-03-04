@@ -1,2 +1,2 @@
-ErrorDocument 403 /~s2410303/403.html
-ErrorDocument 404 /~s2410303/404.html
+ErrorDocument 403 "a"
+ErrorDocument 404 "b"
