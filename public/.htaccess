@@ -3,5 +3,5 @@ Options +FollowSymLinks
 RewriteEngine On
 RewriteBase /~s2410303/
 RewriteRule ^index\.php$ - [L]
-RewriteRule . index.php [L]
+RewriteRule ^(.*)$ index.php [L]
 </IfModule>
