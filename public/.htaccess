@@ -2,7 +2,5 @@
 RewriteEngine On
 RewriteBase /~s2410303/
 RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /~s2410303/index.php [L]
+RewriteRule . /~s2410303/index.html [L]
 </IfModule>
