@@ -2,6 +2,6 @@
 Options +FollowSymLinks
 RewriteEngine On
 RewriteBase /~s2410303/
-RewriteRule ^index\.php$ - [L]
-RewriteRule ^(.*)$ index.php [L]
+RewriteRule ^index\.html$ - [L]
+RewriteRule ^(.*)$ index.html [L]
 </IfModule>
