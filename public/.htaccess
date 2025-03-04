@@ -1,7 +1,2 @@
-<IfModule mod_rewrite.c>
-Options +FollowSymLinks
-RewriteEngine On
-RewriteBase /~s2410303/
-RewriteRule ^index\.html$ - [L]
-RewriteRule ^(.*)$ index.html [L]
-</IfModule>
+ErrorDocument 403 403.html
+ErrorDocument 404 404.html
