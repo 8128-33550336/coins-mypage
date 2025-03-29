@@ -1,6 +1,6 @@
 {
   "version": "0.0.14",
   "scripts": {
-    "build": "cp -r src/e public && ./scripts/replace.sh"
+    "build": "mkdir dist && cp -r public/* dist && cp -r src/e dist && ./scripts/replace.sh"
   }
 }
