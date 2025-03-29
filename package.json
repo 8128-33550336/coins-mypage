@@ -2,6 +2,6 @@
   "version": "0.0.10",
   "scripts": {
     "build": "cp -r src/e public",
-    "pack": "tar -czvf public.tar.gz public"
+    "pack": "tar -czvf public.tar.gz public && tar -czvf server-scripts.tar.gz server-scripts"
   }
 }
