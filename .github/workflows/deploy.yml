@@ -20,8 +20,7 @@ jobs:
       # - run: npm run build
       # - run: npm run pack
       - id: tag
-        run: npm run patch
-      #  >> "$GITHUB_OUTPUT"
+        run: node scripts/patch.js >> "$GITHUB_OUTPUT"
       # - run: git tag -a ${{ steps.tag.outputs.tag }} -m "Release ${{ steps.tag.outputs.tag }}"
       # - run: git push origin ${{ steps.tag.outputs.tag }}
       # - run: gh release create ${{ steps.tag.outputs.tag }} public.tar.gz --title "Release ${{ steps.tag.outputs.tag }}" --notes "Release ${{ steps.tag.outputs.tag }}" --generate-notes
