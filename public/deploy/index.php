@@ -30,6 +30,8 @@ if ($dec_body['action'] != 'created') {
 
 $tag_name = $dec_body['release']['tag_name'];
 
+print("Deploying {$tag_name}...\n");
+
 print(`/home/ugrad/24/s2410303/pull_web.sh "{$tag_name}" 2>&1`);
 
 http_response_code(201);
