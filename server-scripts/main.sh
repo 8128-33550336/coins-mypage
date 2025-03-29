@@ -10,3 +10,5 @@ tar -xzvf server-scripts.tar.gz
 
 rm public.tar.gz
 rm server-scripts.tar.gz
+
+./server-scripts/replace.sh
