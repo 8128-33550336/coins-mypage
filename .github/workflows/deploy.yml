@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: 20
       # - run: npm ci
-      - run: npm run build
-      - run: npm run pack
+      # - run: npm run build
+      # - run: npm run pack
       - id: tag
         run: npm run patch
       #  >> "$GITHUB_OUTPUT"

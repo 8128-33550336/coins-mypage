@@ -20,4 +20,4 @@ fs.writeFileSync("./package.json", newPkgFile, "utf8");
 console.error(`Version updated from ${pkg.version} to ${newVersion}`);
 
 const newVersionTag = `v${newVersion}`;
-console.log(`::set-output name=tag::${newVersionTag}`);
+console.log(`tag=${newVersionTag}`);
