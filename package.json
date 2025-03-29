@@ -1,0 +1,9 @@
+{
+    "version": "0.0.0",
+    "scripts": {
+        "build": "cp -r src/e public",
+        "pack": "tar -czvf public.tar.gz public",
+        "minor": "node scripts/minor.js",
+        "patch": "node scripts/patch.js"
+    }
+}
