@@ -31,7 +31,7 @@ jobs:
       - run: git commit -m "[skip ci] Release ${{ steps.tag.outputs.tag }}"
       - run: git add package.json
       - run: git tag -a ${{ steps.tag.outputs.tag }} -m "Release ${{ steps.tag.outputs.tag }}"
-      - run: git push origin ${{ steps.tag.outputs.tag }}
+      - run: git push
       - run: gh release create ${{ steps.tag.outputs.tag }} public.tar.gz --title "Release ${{ steps.tag.outputs.tag }}" --notes "Release ${{ steps.tag.outputs.tag }}" --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
