@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !/deploy
+
+RewriteCond %{REQUEST_URI} !/main/
+RewriteRule ^(.*)$ main/$1
