@@ -1,7 +1,7 @@
 #!/home/ugrad/24/s2410303/node-v22.13.1-linux-x64/bin/node
 
 const fs = require('fs');
-const stdin = process.stdin;
+const stdin = fs.readFileSync(0, 'utf-8');
 const envs = process.env;
 
 process.stdout.write("Content-type: text/plain\r\n");
