@@ -1,6 +1,6 @@
 {
-  "version": "0.0.14",
-  "scripts": {
-    "build": "mkdir -p dist && rm -rf dist/* && cp -r public/* dist && cp -r src/e dist && ./scripts/replace.sh"
-  }
+    "version": "0.0.14",
+    "scripts": {
+        "build": "mkdir -p root/main && rm -rf root/main/* && cp -r public/* root/main/ && cp -r src/e root/main/ && ./scripts/replace.sh"
+    }
 }
