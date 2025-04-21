@@ -3,5 +3,5 @@
 while read line; do
     key=`echo "$line" | cut -d '=' -f 1`
     val=`echo "$line" | cut -d '=' -f 2`
-    find ./dist -type f | xargs sed -i "s|{$key}|$val|g"
+    find ./root/main -type f | xargs sed -i "s|{$key}|$val|g"
 done < .env
