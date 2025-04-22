@@ -4,7 +4,27 @@ const fs = require('fs');
 const stdin = fs.readFileSync(0, 'utf-8');
 const envs = process.env;
 
-process.stdout.write("Content-type: text/plain\r\n");
+const token = envs['HTTP_AUTHORIZATION'] || '';
+
+const checkToken = (token) => {
+    const tokenParts = token.split(' ');
+    if (tokenParts.length !== 2 || tokenParts[0] !== 'Bearer') {
+        return false;
+    }
+    const tokenValue = tokenParts[1];
+
+    return tokenValue === 'your_secret_token';
+};
+
+if (!checkToken(token)) {
+    process.stdout.write("Status: 401\r\n");
+    process.stdout.write("\r\n"););
+    process.exit(0);
+}
+
+process.stdout.write("Content-type: application/json\r\n");
+process.stdout.write("Access-Control-Allow-Origin: null\r\n");
+process.stdout.write("Cache-Control: no-store\r\n");
 process.stdout.write("\r\n");
 process.stdout.write(JSON.stringify({
     "env": envs,
