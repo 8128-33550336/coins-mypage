@@ -8,25 +8,36 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
-    <h1>発信者、公開責任者情報</h1>
+    <h1>情報発信者情報</h1>
     <p>このページの内容をクローラーなどが読める場所には置かないようお願いいたします。</p>
     <div class="cf-turnstile" data-sitekey="{site_key}" data-callback="turnstileCallback"></div>
-    <p><pre>https://www.coins.tsukuba.ac.jp/~{utid_name}/</pre>下 のページの発信者 の連絡先です。</p>
+    <p><pre>https://www.coins.tsukuba.ac.jp/~{utid_name}/</pre>下 のページの発信者の連絡先です。</p>
     <dl>
         <dt>所属</dt>
         <dd>筑波大学情報科学類</dd>
         <dt>氏名</dt>
-        <dd><ruby>{real_name}<rp>(</rp><rt>{real_name_kana}</rt><rp>)</rp></ruby></dd>
-
-
-
-
-            {utid_13}
+        <dd><ruby><span id="realName">認証後に表示されます。</span><rp>(</rp><rt><span id="realNameKana"></span></rt><rp>)</rp></ruby></dd>
+        <dt>メールアドレス</dt>
+        <dd><span id="mailAddress"></span></dd>
+        <dt>学籍番号</dt>
+        <dd><span id="studentId"></span></dd>
     <p></p>
     <a href="mailto:{utid_name}@coins.tsukuba.ac.jp">{utid_name}@coins.tsukuba.ac.jp</a>
     <script>
-        window.turnstileCallback = (...args) => {
+        window.turnstileCallback = (token) => {
             console.log("turnstileCallback", JSON.stringify([...args], null, 4));
+            fetch('priv/', {
+                headers: {
+                    'CF-Turnstile-Response': `Bearer ${token}`,
+                }
+            }).then(res => res.json()).then(data => {
+                document.getElementById("realName").textContent = data.realName;
+                document.getElementById("realNameKana").textContent = data.realNameKana;
+                document.getElementById("mailAddress").textContent = data.mailAddress;
+                document.getElementById("studentId").textContent = data.studentId;
+            }).catch(err => {
+                console.error('認証に失敗しました。');
+            });
         };
     </script>
 </body>
