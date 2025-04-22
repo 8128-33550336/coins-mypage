@@ -27,32 +27,13 @@ const checkToken = async (token) => {
 
     const outcome = await result.json();
 
-    return outcome;
+    return outcome.success;
 };
 
 const response = async () => {
-    const outcome = await checkToken(token);
-    if (!outcome.success) {
+    if (!(await checkToken(token))) {
         process.stdout.write("Status: 401\r\n");
         process.stdout.write("\r\n");
-        process.stdout.write("Content-type: application/json\r\n");
-        process.stdout.write("Access-Control-Allow-Origin: null\r\n");
-        process.stdout.write("Cache-Control: no-store\r\n");
-        process.stdout.write("\r\n");
-        process.stdout.write(
-            JSON.stringify(
-                {
-                    secret: "this is secret",
-                    realName: "{real_name}",
-                    realNameKana: "{real_name_kana}",
-                    mailAddress: "{utid_name}@coins.tsukuba.ac.jp",
-                    studentId: "{student_id}",
-                    outcome,
-                },
-                null,
-                4
-            )
-        );
         return;
     } else {
         process.stdout.write("Status: 200\r\n");
@@ -70,11 +51,10 @@ const response = async () => {
                 realNameKana: "{real_name_kana}",
                 mailAddress: "{utid_name}@coins.tsukuba.ac.jp",
                 studentId: "{student_id}",
-                outcome,
             },
             null,
             4
-        )
+        ) + "\n"
     );
 };
 
