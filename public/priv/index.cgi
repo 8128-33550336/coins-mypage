@@ -30,10 +30,9 @@ process.stdout.write("Access-Control-Allow-Origin: null\r\n");
 process.stdout.write("Cache-Control: no-store\r\n");
 process.stdout.write("\r\n");
 process.stdout.write(JSON.stringify({
-    "env": envs,
-    "stdin": stdin,
-    "args": process.argv,
-    "cwd": process.cwd(),
-    token,
-    ip,
+    secret: 'this is secret',
+    realName: '{real_name}',
+    realNameKana: '{real_name_kana}',
+    mailAddress: '{utid_name}@coins.tsukuba.ac.jp,
+    studentId: '{student_id}',
 }, null, 4));
