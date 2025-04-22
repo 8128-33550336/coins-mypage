@@ -5,7 +5,6 @@ const stdin = fs.readFileSync(0, 'utf-8');
 const envs = process.env;
 
 const token = envs['HTTP_CF_TURNSTILE_RESPONSE'] || '';
-const ip = envs['HTTP_CF_CONNECTING_IP'] || '';
 
 const checkToken = (token) => {
     const tokenParts = token.split(' ');
