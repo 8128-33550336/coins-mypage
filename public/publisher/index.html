@@ -25,7 +25,6 @@
     <a href="mailto:{utid_name}@coins.tsukuba.ac.jp">{utid_name}@coins.tsukuba.ac.jp</a>
     <script>
         window.turnstileCallback = (token) => {
-            console.log("turnstileCallback", JSON.stringify([...args], null, 4));
             fetch('priv/', {
                 headers: {
                     'CF-Turnstile-Response': `Bearer ${token}`,
