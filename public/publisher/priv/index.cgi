@@ -20,20 +20,39 @@ const checkToken = async (token) => {
             },
             body: JSON.stringify({
                 secret: "{secret}",
-                response: token,
+                response: tokenValue,
             }),
         }
     );
 
     const outcome = await result.json();
 
-    return outcome.success;
+    return outcome;
 };
 
 const response = async () => {
-    if (!(await checkToken(token))) {
+    const outcome = await checkToken(token);
+    if (!outcome.success) {
         process.stdout.write("Status: 401\r\n");
         process.stdout.write("\r\n");
+        process.stdout.write("Content-type: application/json\r\n");
+        process.stdout.write("Access-Control-Allow-Origin: null\r\n");
+        process.stdout.write("Cache-Control: no-store\r\n");
+        process.stdout.write("\r\n");
+        process.stdout.write(
+            JSON.stringify(
+                {
+                    secret: "this is secret",
+                    realName: "{real_name}",
+                    realNameKana: "{real_name_kana}",
+                    mailAddress: "{utid_name}@coins.tsukuba.ac.jp",
+                    studentId: "{student_id}",
+                    outcome,
+                },
+                null,
+                4
+            )
+        );
         return;
     } else {
         process.stdout.write("Status: 200\r\n");
@@ -51,6 +70,7 @@ const response = async () => {
                 realNameKana: "{real_name_kana}",
                 mailAddress: "{utid_name}@coins.tsukuba.ac.jp",
                 studentId: "{student_id}",
+                outcome,
             },
             null,
             4
