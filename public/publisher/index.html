@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <meta name="robots" content="noindex">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
     <h1>発信者、公開責任者情報</h1>
+    <p>このページの内容をクローラーなどが読める場所には置かないようお願いいたします。</p>
+    <div class="cf-turnstile" data-sitekey="{site-key}" data-callback="turnstileCallback"></div>
     <p><pre>https://www.coins.tsukuba.ac.jp/~{utid_name}/</pre>下 のページの発信者 の連絡先です。</p>
     <dl>
         <dt>所属</dt>
@@ -21,5 +24,10 @@
             {utid_13}
     <p></p>
     <a href="mailto:{utid_name}@coins.tsukuba.ac.jp">{utid_name}@coins.tsukuba.ac.jp</a>
+    <script>
+        window.turnstileCallback = (...args) => {
+            console.log("turnstileCallback", ...args);
+        };
+    </script>
 </body>
 </html>
