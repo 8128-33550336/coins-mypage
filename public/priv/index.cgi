@@ -19,8 +19,8 @@ const checkToken = (token) => {
 
 if (!checkToken(token)) {
     process.stdout.write("Status: 401\r\n");
-    // process.stdout.write("\r\n");
-    // process.exit(0);
+    process.stdout.write("\r\n");
+    process.exit(0);
 } else {
     process.stdout.write("Status: 200\r\n");
 }
