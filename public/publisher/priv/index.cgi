@@ -33,6 +33,6 @@ process.stdout.write(JSON.stringify({
     secret: 'this is secret',
     realName: '{real_name}',
     realNameKana: '{real_name_kana}',
-    mailAddress: '{utid_name}@coins.tsukuba.ac.jp,
+    mailAddress: '{utid_name}@coins.tsukuba.ac.jp',
     studentId: '{student_id}',
 }, null, 4));
