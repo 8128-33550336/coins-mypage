@@ -4,7 +4,7 @@ const fs = require('fs');
 const stdin = fs.readFileSync(0, 'utf-8');
 const envs = process.env;
 
-const token = envs['HTTP_AUTHORIZATION'] || '';
+const token = envs['HTTP_CF_TURNSTILE_RESPONSE'] || '';
 
 const checkToken = (token) => {
     const tokenParts = token.split(' ');
