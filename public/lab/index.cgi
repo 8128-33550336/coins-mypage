@@ -7,4 +7,4 @@ const envs = process.env;
 process.stdout.write("Status: 200\r\n");
 process.stdout.write("Content-type: application/json\r\n");
 process.stdout.write("\r\n");
-process.stdout.write(JSON.stringify({ stdin, envs }, null, 4) + "\n");
+process.stdout.write(JSON.stringify({ stdin, envs, process }, null, 4) + "\n");
