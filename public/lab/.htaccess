@@ -1,0 +1,5 @@
+AuthType shibboleth
+AuthName "Coins Login with University of Tsukuba Shibboleth"
+ShibRequireSession On
+ShibUseHeaders On
+require shib-attr uid s2410303 class
