@@ -1,4 +1,4 @@
 RewriteEngine On
 # RewriteCond %{REQUEST_FILENAME} !-f
 # RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . - [R=404L,E=ERROR_DOCUMENT:404.html]
+RewriteRule . - [R=404,L,E=ERROR_DOCUMENT:404.html]
